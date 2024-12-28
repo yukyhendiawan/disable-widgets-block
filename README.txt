@@ -2,7 +2,7 @@
 Tags:              disable, widgets, gutenberg, classic, enable
 Requires at least: 6.0
 Tested up to:      6.7
-Stable tag:        1.3.1
+Stable tag:        1.4.0
 Requires PHP:      7.4
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html

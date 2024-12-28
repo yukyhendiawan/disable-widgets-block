@@ -4,8 +4,8 @@ Disable Widgets Block is a plugin that provides a simple solution for users who 
 
 ## Requirements
 
- - WordPress 6.4+
- - PHP 7.4+
+- WordPress 6.4+
+- PHP 7.4+
 
 ## Contribute
 
