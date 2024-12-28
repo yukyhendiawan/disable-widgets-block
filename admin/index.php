@@ -8,7 +8,6 @@
  * @since      1.0.0
  *
  * @package    Disable_Widgets_Block
- * @subpackage Disable_Widgets_Block/includes
  */
 
 // Silence is golden.
