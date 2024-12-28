@@ -212,7 +212,7 @@ if ( file_exists( $plugin_file ) ) {
 					<div class="changelog-list">
 					<?php
 					// GitHub API URL to get the list of releases.
-					$api_url = 'https://api.github.com/repos/yukyhendiawan/import-export-menu/releases';
+					$api_url = 'https://api.github.com/repos/yukyhendiawan/disable-widgets-block/releases';
 
 					// Set arguments for wp_remote_get.
 					$args = array(
