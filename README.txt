@@ -7,7 +7,7 @@ Requires PHP:      7.4
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin simplifies WordPress widget management by disabling Gutenberg widget blocks and restoring the familiar classic widget interface. Upon activation, this change is applied automatically, requiring no additional configuration. Enjoy the ease and speed of pre-Gutenberg widget management.
+Disable Gutenberg widget blocks and restore the classic widget interface for a simple, fast, and familiar WordPress widget management experience.
 
 == Description ==
 
