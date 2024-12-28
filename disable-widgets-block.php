@@ -10,7 +10,7 @@
  *
  * @link              https://yukyhendiawan.com
  * @since             1.0.0
- * @package           Disable_Widgets_Gb
+ * @package           Disable_Widgets_Block
  *
  * @wordpress-plugin
  * Plugin Name:       Disable Widgets Block
@@ -35,37 +35,37 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'DISABLE_WIDGETS_GB_VERSION', '1.3.0' );
-define( 'DISABLE_WIDGETS_GB_DIR_URL', plugin_dir_url( __FILE__ ) );
-define( 'DISABLE_WIDGETS_GB_DIR_PATH', plugin_dir_path( __FILE__ ) );
-define( 'DISABLE_WIDGETS_GB_ASSETS_URL', plugin_dir_url( __FILE__ ) . 'assets/' );
+define( 'DISABLE_WIDGETS_BLOCK_VERSION', '1.3.0' );
+define( 'DISABLE_WIDGETS_BLOCK_DIR_URL', plugin_dir_url( __FILE__ ) );
+define( 'DISABLE_WIDGETS_BLOCK_DIR_PATH', plugin_dir_path( __FILE__ ) );
+define( 'DISABLE_WIDGETS_BLOCK_ASSETS_URL', plugin_dir_url( __FILE__ ) . 'assets/' );
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-disable-widgets-gb-activator.php
+ * This action is documented in includes/class-disable-widgets-block-activator.php
  */
-function disable_widgets_gb_activate() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-disable-widgets-gb-activator.php';
-	Disable_Widgets_Gb_Activator::activate();
+function disable_widgets_block_activate() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-disable-widgets-block-activator.php';
+	Disable_Widgets_Block_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-disable-widgets-gb-deactivator.php
+ * This action is documented in includes/class-disable-widgets-block-deactivator.php
  */
-function disable_widgets_gb_deactivate() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-disable-widgets-gb-deactivator.php';
-	Disable_Widgets_Gb_Deactivator::deactivate();
+function disable_widgets_block_deactivate() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-disable-widgets-block-deactivator.php';
+	Disable_Widgets_Block_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'disable_widgets_gb_activate' );
-register_deactivation_hook( __FILE__, 'disable_widgets_gb_deactivate' );
+register_activation_hook( __FILE__, 'disable_widgets_block_activate' );
+register_deactivation_hook( __FILE__, 'disable_widgets_block_deactivate' );
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-disable-widgets-gb.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-disable-widgets-block.php';
 
 /**
  * Begins execution of the plugin.
@@ -76,10 +76,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-disable-widgets-gb.php';
  *
  * @since    1.0.0
  */
-function disable_widgets_gb() {
+function disable_widgets_block() {
 
-	$plugin = new Disable_Widgets_Gb();
+	$plugin = new Disable_Widgets_Block();
 	$plugin->run();
 
 }
-disable_widgets_gb();
+disable_widgets_block();

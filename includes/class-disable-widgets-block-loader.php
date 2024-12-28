@@ -6,8 +6,8 @@
  * @link       https://yukyhendiawan.com
  * @since      1.0.0
  *
- * @package    Disable_Widgets_Gb
- * @subpackage Disable_Widgets_Gb/includes
+ * @package    Disable_Widgets_Block
+ * @subpackage Disable_Widgets_Block/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Disable_Widgets_Gb
- * @subpackage Disable_Widgets_Gb/includes
+ * @package    Disable_Widgets_Block
+ * @subpackage Disable_Widgets_Block/includes
  * @author     Yuky Hendiawan <yukyhendiawan1998@gmail.com>
  */
-class Disable_Widgets_Gb_Loader {
+class Disable_Widgets_Block_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

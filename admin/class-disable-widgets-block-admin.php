@@ -6,8 +6,8 @@
  * @link       https://yukyhendiawan.com
  * @since      1.0.0
  *
- * @package    Disable_Widgets_Gb
- * @subpackage Disable_Widgets_Gb/admin
+ * @package    Disable_Widgets_Block
+ * @subpackage Disable_Widgets_Block/admin
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Disable_Widgets_Gb
- * @subpackage Disable_Widgets_Gb/admin
+ * @package    Disable_Widgets_Block
+ * @subpackage Disable_Widgets_Block/admin
  * @author     Yuky Hendiawan <yukyhendiawan1998@gmail.com>
  */
-class Disable_Widgets_Gb_Admin {
+class Disable_Widgets_Block_Admin {
 
 	/**
 	 * The ID of this plugin.
@@ -64,10 +64,10 @@ class Disable_Widgets_Gb_Admin {
 		// Check if the current admin page is 'disable-widgets-block-settings' (top-level menu page).
 		if ( 'toplevel_page_disable-widgets-block-settings' === $hook ) {
 			// Enqueue the admin CSS file.
-			wp_enqueue_style( 'disable-widgets-block-style', plugins_url( 'disable-widgets-blockock' ) . '/assets/css/admin-menu.min.css', array(), '1.0.0' );
+			wp_enqueue_style( 'disable-widgets-block-style', DISABLE_WIDGETS_BLOCK_DIR_URL . '/assets/css/admin-menu.min.css', array(), '1.0.0' );
 
 			// Enqueue the admin JavaScript file with jQuery as a dependency.
-			wp_enqueue_script( 'disable-widgets-blockock-script', plugins_urldisable-widgets-block-gb' ) . '/assets/js/admin-menu.min.js', array(), '1.0.0', true );
+			wp_enqueue_script( 'disable-widgets-blockock-script', DISABLE_WIDGETS_BLOCK_DIR_URL . '/assets/js/admin-menu.min.js', array(), '1.0.0', true );
 		}
 	}
 
@@ -120,7 +120,7 @@ class Disable_Widgets_Gb_Admin {
 	 */
 	public function template_for_information_menu() {
 		// Define the path to the template file.
-		$template_path = DISABLE_WIDGETS_GB_DIR_PATH . 'admin/templates/information.php';
+		$template_path = DISABLE_WIDGETS_BLOCK_DIR_PATH . 'admin/templates/information.php';
 
 		// Check if the template file exists.
 		if ( file_exists( $template_path ) ) {
@@ -138,7 +138,7 @@ class Disable_Widgets_Gb_Admin {
 	 * 
 	 * @return false False.
 	 */
-	public function disable_widgets_gb() {
+	public function disable_widgets_block() {
 		return false;
 	} 
 

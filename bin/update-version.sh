@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path to your files
-PLUGIN_FILE="disable-widgets-gb.php"
+PLUGIN_FILE="disable-widgets-block.php"
 README_FILE="README.txt"
 CHANGELOG_FILE="CHANGELOG.md"
 
@@ -27,10 +27,10 @@ else
 fi
 
 # Update the define statement
-if sed -i -E "s/define\(\s*'DISABLE_WIDGETS_GB_VERSION',\s*'[^']*'\s*\);/define( 'DISABLE_WIDGETS_GB_VERSION', '$NEW_VERSION' );/" "$PLUGIN_FILE"; then
-  echo "Successfully updated the DISABLE_WIDGETS_GB_VERSION define statement in $PLUGIN_FILE"
+if sed -i -E "s/define\(\s*'DISABLE_WIDGETS_BLOCK_VERSION',\s*'[^']*'\s*\);/define( 'DISABLE_WIDGETS_BLOCK_VERSION', '$NEW_VERSION' );/" "$PLUGIN_FILE"; then
+  echo "Successfully updated the DISABLE_WIDGETS_BLOCK_VERSION define statement in $PLUGIN_FILE"
 else
-  echo "Failed to update the DISABLE_WIDGETS_GB_VERSION define statement in $PLUGIN_FILE"
+  echo "Failed to update the DISABLE_WIDGETS_BLOCK_VERSION define statement in $PLUGIN_FILE"
   exit 1
 fi
 

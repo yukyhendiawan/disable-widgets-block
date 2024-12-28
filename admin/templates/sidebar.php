@@ -2,7 +2,7 @@
 /**
  * Template for the sidebar submenu.
  *
- * @package     Disable_Widgets_Gb
+ * @package     Disable_Widgets_Block
  * @author      Yuky Hendiawan <yukyhendiawan1998@gmail.com>
  * @link        https://developer.wordpress.org/reference/functions/add_theme_page/
  * @since       1.0.0

@@ -9,8 +9,8 @@
  * @link       https://yukyhendiawan.com
  * @since      1.0.0
  *
- * @package    Disable_Widgets_Gb
- * @subpackage Disable_Widgets_Gb/includes
+ * @package    Disable_Widgets_Block
+ * @subpackage Disable_Widgets_Block/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Disable_Widgets_Gb
- * @subpackage Disable_Widgets_Gb/includes
+ * @package    Disable_Widgets_Block
+ * @subpackage Disable_Widgets_Block/includes
  * @author     Yuky Hendiawan <yukyhendiawan1998@gmail.com>
  */
-class Disable_Widgets_Gb {
+class Disable_Widgets_Block {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Disable_Widgets_Gb {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Disable_Widgets_Gb_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Disable_Widgets_Block_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -67,8 +67,8 @@ class Disable_Widgets_Gb {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'DISABLE_WIDGETS_GB_VERSION' ) ) {
-			$this->version = DISABLE_WIDGETS_GB_VERSION;
+		if ( defined( 'DISABLE_WIDGETS_BLOCK_VERSION' ) ) {
+			$this->version = DISABLE_WIDGETS_BLOCK_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
@@ -86,10 +86,10 @@ class Disable_Widgets_Gb {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Disable_Widgets_Gb_Loader. Orchestrates the hooks of the plugin.
-	 * - Disable_Widgets_Gb_i18n. Defines internationalization functionality.
-	 * - Disable_Widgets_Gb_Admin. Defines all hooks for the admin area.
-	 * - Disable_Widgets_Gb_Public. Defines all hooks for the public side of the site.
+	 * - Disable_Widgets_Block_Loader. Orchestrates the hooks of the plugin.
+	 * - Disable_Widgets_Block_i18n. Defines internationalization functionality.
+	 * - Disable_Widgets_Block_Admin. Defines all hooks for the admin area.
+	 * - Disable_Widgets_Block_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -103,33 +103,33 @@ class Disable_Widgets_Gb {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-disable-widgets-gb-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-disable-widgets-block-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-disable-widgets-gb-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-disable-widgets-block-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-disable-widgets-gb-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-disable-widgets-block-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-disable-widgets-gb-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-disable-widgets-block-public.php';
 
-		$this->loader = new Disable_Widgets_Gb_Loader();
+		$this->loader = new Disable_Widgets_Block_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Disable_Widgets_Gb_i18n class in order to set the domain and to register the hook
+	 * Uses the Disable_Widgets_Block_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -137,7 +137,7 @@ class Disable_Widgets_Gb {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Disable_Widgets_Gb_i18n();
+		$plugin_i18n = new Disable_Widgets_Block_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,12 +152,12 @@ class Disable_Widgets_Gb {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Disable_Widgets_Gb_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Disable_Widgets_Block_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_admin' );
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'disable_admin_notices', 99999999 );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'admin_menu_page' );
-		$this->loader->add_filter( 'use_widgets_block_editor', $plugin_admin, 'disable_widgets_gb', 99999999 );
+		$this->loader->add_filter( 'use_widgets_block_editor', $plugin_admin, 'disable_widgets_block', 99999999 );
 
 	}
 
@@ -170,7 +170,7 @@ class Disable_Widgets_Gb {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Disable_Widgets_Gb_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Disable_Widgets_Block_Public( $this->get_plugin_name(), $this->get_version() );
 
 	}
 
@@ -198,7 +198,7 @@ class Disable_Widgets_Gb {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Disable_Widgets_Gb_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Disable_Widgets_Block_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

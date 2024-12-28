@@ -2,13 +2,13 @@
 /**
  * Content template for submenu page.
  *
- * @package     Disable_Widgets_Gb
+ * @package     Disable_Widgets_Block
  * @author      Yuky Hendiawan <yukyhendiawan1998@gmail.com>
  * @since       1.0.0
  */
 
 // Construct the file path of the plugin.
-$plugin_file = WP_PLUGIN_DIR . '/disable-widgets-block/disable-widgets-gb.php';
+$plugin_file = WP_PLUGIN_DIR . '/disable-widgets-block/disable-widgets-block.php';
 
 // Check if the plugin file exists.
 if ( file_exists( $plugin_file ) ) {
@@ -249,12 +249,12 @@ if ( file_exists( $plugin_file ) ) {
 								// Extract the body content.
 								$body = $release['body'];
 
-								$features_section      = disable_widgets_gb_extract_section( $body, '### Features', 'feat' );
-								$bug_section           = disable_widgets_gb_extract_section( $body, '### Bug Fixes', 'fix' );
-								$documentation_section = disable_widgets_gb_extract_section( $body, '### Documentation', 'docs' );
-								$style_section         = disable_widgets_gb_extract_section( $body, '### Styles', 'style' );
-								$refactoring_section   = disable_widgets_gb_extract_section( $body, '### Code Refactoring', 'refactor' );
-								$performance_section   = disable_widgets_gb_extract_section( $body, '### Performance Improvements', 'perf' );
+								$features_section      = disable_widgets_block_extract_section( $body, '### Features', 'feat' );
+								$bug_section           = disable_widgets_block_extract_section( $body, '### Bug Fixes', 'fix' );
+								$documentation_section = disable_widgets_block_extract_section( $body, '### Documentation', 'docs' );
+								$style_section         = disable_widgets_block_extract_section( $body, '### Styles', 'style' );
+								$refactoring_section   = disable_widgets_block_extract_section( $body, '### Code Refactoring', 'refactor' );
+								$performance_section   = disable_widgets_block_extract_section( $body, '### Performance Improvements', 'perf' );
 
 								?>
 								<section>
@@ -332,7 +332,7 @@ if ( file_exists( $plugin_file ) ) {
 					 * @param string $info The class name for the span element.
 					 * @return string The extracted and formatted section as an HTML list.
 					 */
-					function disable_widgets_gb_extract_section( $body, $start_marker, $info ) {
+					function disable_widgets_block_extract_section( $body, $start_marker, $info ) {
 						// Define the start and end markers for the section.
 						$start_pos = strpos( $body, $start_marker );
 						if ( false === $start_pos ) {

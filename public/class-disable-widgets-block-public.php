@@ -6,8 +6,8 @@
  * @link       https://yukyhendiawan.com
  * @since      1.0.0
  *
- * @package    Disable_Widgets_Gb
- * @subpackage Disable_Widgets_Gb/public
+ * @package    Disable_Widgets_Block
+ * @subpackage Disable_Widgets_Block/public
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Disable_Widgets_Gb
- * @subpackage Disable_Widgets_Gb/public
+ * @package    Disable_Widgets_Block
+ * @subpackage Disable_Widgets_Block/public
  * @author     Yuky Hendiawan <yukyhendiawan1998@gmail.com>
  */
-class Disable_Widgets_Gb_Public {
+class Disable_Widgets_Block_Public {
 
 	/**
 	 * The ID of this plugin.

@@ -22,7 +22,7 @@
  * @link       https://yukyhendiawan.com
  * @since      1.0.0
  *
- * @package    Disable_Widgets_Gb
+ * @package    Disable_Widgets_Block
  */
 
 // If uninstall not called from WordPress, then exit.
