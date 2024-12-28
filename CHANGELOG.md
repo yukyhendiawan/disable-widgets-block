@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.4.0 (2024-12-28)
+
+* refactor: file index.php docblock comments ([9856ae2](https://github.com/yukyhendiawan/disable-widgets-block/commit/9856ae2))
+* refactor: github api url to get the list of releases ([46618d8](https://github.com/yukyhendiawan/disable-widgets-block/commit/46618d8))
+* refactor: plugin information short description ([91ef76e](https://github.com/yukyhendiawan/disable-widgets-block/commit/91ef76e))
+* refactor: stable tag ([1fb059b](https://github.com/yukyhendiawan/disable-widgets-block/commit/1fb059b))
+* feat: check before release ([3e06798](https://github.com/yukyhendiawan/disable-widgets-block/commit/3e06798))
+* feat: update package version ([3fa9c0a](https://github.com/yukyhendiawan/disable-widgets-block/commit/3fa9c0a))
+* fix: wordpress coding standards wpcs ([8488444](https://github.com/yukyhendiawan/disable-widgets-block/commit/8488444))
+
 ## <small>1.3.1 (2024-12-28)</small>
 
 * refactor: changing the slug file disable-widgets-gb ([1ffe98d](https://github.com/yukyhendiawan/disable-widgets-block/commit/1ffe98d))

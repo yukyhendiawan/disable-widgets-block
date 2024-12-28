@@ -15,7 +15,7 @@
  * Plugin Name:       Disable Widgets Block
  * Plugin URI:        https://yukyhendiawan.com
  * Description:       Disable Widgets Block is a plugin that allows you to effortlessly deactivate and replace Gutenberg blocks with the classic widget experience.
- * Version:           1.3.1
+ * Version:           1.4.0
  * Author:            Yuky Hendiawan
  * Author URI:        https://yukyhendiawan.com/
  * License:           GPL-2.0+
@@ -34,7 +34,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'DISABLE_WIDGETS_BLOCK_VERSION', '1.3.1' );
+define( 'DISABLE_WIDGETS_BLOCK_VERSION', '1.4.0' );
 define( 'DISABLE_WIDGETS_BLOCK_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'DISABLE_WIDGETS_BLOCK_DIR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'DISABLE_WIDGETS_BLOCK_ASSETS_URL', plugin_dir_url( __FILE__ ) . 'assets/' );
