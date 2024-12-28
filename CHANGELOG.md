@@ -1,5 +1,11 @@
 # Changelog
 
+## <small>1.3.1 (2024-12-28)</small>
+
+* refactor: changing the slug file disable-widgets-gb ([1ffe98d](https://github.com/yukyhendiawan/disable-widgets-block/commit/1ffe98d))
+* refactor: changing the slug from disable-widgets-gb to disable-widgets-bloc ([9820de9](https://github.com/yukyhendiawan/disable-widgets-block/commit/9820de9))
+* Initial commit ([1b9cda3](https://github.com/yukyhendiawan/disable-widgets-block/commit/1b9cda3))
+
 ## 1.3.0 (2024-12-26)
 
 * feat: add short description plugin ([29ded96](https://github.com/yukyhendiawan/disable-widgets-block/commit/29ded96))
