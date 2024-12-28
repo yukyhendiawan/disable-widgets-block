@@ -1,5 +1,5 @@
 {
-	"name": "yukyhendiwan/disable-widgets-gb",
+	"name": "yukyhendiwan/disable-widgets-block",
 	"description": "This plugin opens the door for you to return to using the familiar and easy-to-understand classic editing interface.",
 	"license": "GPL-2.0-or-later",
 	"type": "wordpress-plugin",
@@ -10,13 +10,13 @@
 	"authors": [
 		{
 			"name": "Contributors",
-			"homepage": "https://github.com/yukyhendiawan/disable-widgets-gb/graphs/contributors"
+			"homepage": "https://github.com/yukyhendiawan/disable-widgets-block/graphs/contributors"
 		}
 	],
-	"homepage": "https://github.com/yukyhendiawan/disable-widgets-gb",
+	"homepage": "https://github.com/yukyhendiawan/disable-widgets-block",
 	"support": {
-		"issues": "https://github.com/yukyhendiawan/disable-widgets-gb/issues",
-		"source": "https://github.com/yukyhendiawan/disable-widgets-gb"
+		"issues": "https://github.com/yukyhendiawan/disable-widgets-block/issues",
+		"source": "https://github.com/yukyhendiawan/disable-widgets-block"
 	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
@@ -42,6 +42,6 @@
 		"check:php:compatibility:wp:56+": "./vendor/bin/phpcs -p . --standard=phpcs.xml --extensions=php --ignore=*/vendor/*,*/node_modules/*",
 		"lint:wpcs": "./vendor/bin/phpcs --standard=phpcs.xml",
 		"lint:wpcs:fix": "./vendor/bin/phpcbf --standard=phpcs.xml --report-summary --report-source",
-		"make-pot": "wp i18n make-pot . languages/disable-widgets-gb.pot"
+		"make-pot": "wp i18n make-pot . languages/disable-widgets-block.pot"
 	}
 }

@@ -55,19 +55,19 @@ class Disable_Widgets_Gb_Admin {
 	}
 
 	/**
-	 * Enqueue admin-specific styles and scripts for the 'disable-widgets-gb-settings' admin page.
+	 * Enqueue admin-specific styles and scripts for the 'disable-widgets-block-settings' admin page.
 	 *
 	 * @param string $hook The current admin page hook.
 	 */
 	public function enqueue_admin( $hook ) {
 
-		// Check if the current admin page is 'disable-widgets-gb-settings' (top-level menu page).
-		if ( 'toplevel_page_disable-widgets-gb-settings' === $hook ) {
+		// Check if the current admin page is 'disable-widgets-block-settings' (top-level menu page).
+		if ( 'toplevel_page_disable-widgets-block-settings' === $hook ) {
 			// Enqueue the admin CSS file.
-			wp_enqueue_style( 'disable-widgets-gb-style', plugins_url( 'disable-widgets-gb' ) . '/assets/css/admin-menu.min.css', array(), '1.0.0' );
+			wp_enqueue_style( 'disable-widgets-block-style', plugins_url( 'disable-widgets-blockock' ) . '/assets/css/admin-menu.min.css', array(), '1.0.0' );
 
 			// Enqueue the admin JavaScript file with jQuery as a dependency.
-			wp_enqueue_script( 'disable-widgets-gb-script', plugins_url( 'disable-widgets-gb' ) . '/assets/js/admin-menu.min.js', array(), '1.0.0', true );
+			wp_enqueue_script( 'disable-widgets-blockock-script', plugins_urldisable-widgets-block-gb' ) . '/assets/js/admin-menu.min.js', array(), '1.0.0', true );
 		}
 	}
 
@@ -75,7 +75,7 @@ class Disable_Widgets_Gb_Admin {
 	 * Clear admin notices on specific plugin pages.
 	 *
 	 * This function removes all admin notices when the user is on either
-	 * the "disable-widgets-gb-settings" or "disable-widgets-gb" page within the admin area.
+	 * the "disable-widgets-blockock-settings" or "disable-widgets-block" page within the admin area.
 	 *
 	 * @global string $plugin_page The current plugin page slug.
 	 */
@@ -84,8 +84,8 @@ class Disable_Widgets_Gb_Admin {
 
 		// Check if the user is in the admin area.
 		if ( is_admin() ) {
-			// If the current page is either "disable-widgets-gb-settings" or "disable-widgets-gb".
-			if ( 'disable-widgets-gb-settings' === $plugin_page ) {
+			// If the current page is either "disable-widgets-block-settings" or "disable-widgets-block".
+			if ( 'disable-widgets-block-settings' === $plugin_page ) {
 				// Remove all admin notices for these specific pages.
 				remove_all_actions( 'admin_notices' );
 			}
@@ -103,10 +103,10 @@ class Disable_Widgets_Gb_Admin {
 	 */
 	public function admin_menu_page() {
 		add_menu_page(
-			__( 'Disable Widgets', 'disable-widgets-gb' ), // Page title.
-			__( 'Disable Widgets', 'disable-widgets-gb' ), // Menu title.
+			__( 'Disable Widgets', 'disable-widgets-block' ), // Page title.
+			__( 'Disable Widgets', 'disable-widgets-block' ), // Menu title.
 			'manage_options', // Capability required.
-			'disable-widgets-gb-settings', // Menu slug.
+			'disable-widgets-block-settings', // Menu slug.
 			array( $this, 'template_for_information_menu' ), // Callback function.			
 			'dashicons-admin-customizer' // Icon URL.
 		);

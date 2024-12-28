@@ -72,7 +72,7 @@ class Disable_Widgets_Gb {
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'disable-widgets-gb';
+		$this->plugin_name = 'disable-widgets-block';
 
 		$this->load_dependencies();
 		$this->set_locale();

@@ -35,7 +35,7 @@ class Disable_Widgets_Gb_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'disable-widgets-gb',
+			'disable-widgets-block',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

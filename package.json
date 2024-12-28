@@ -1,5 +1,5 @@
 {
-	"name": "disable-widgets-gb",
+	"name": "disable-widgets-block",
 	"version": "1.3.0",
 	"description": "This plugin opens the door for you to return to using the familiar and easy-to-understand classic editing interface.",
 	"author": "Yuky Hendiawan",
@@ -8,13 +8,13 @@
 		"WordPress",
 		"plugin"
 	],
-	"homepage": "https://github.com/yukyhendiawan/disable-widgets-gb",
+	"homepage": "https://github.com/yukyhendiawan/disable-widgets-block",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/yukyhendiawan/disable-widgets-gb.git"
+		"url": "git+https://github.com/yukyhendiawan/disable-widgets-block.git"
 	},
 	"bugs": {
-		"url": "https://github.com/yukyhendiawan/disable-widgets-gb/issues"
+		"url": "https://github.com/yukyhendiawan/disable-widgets-block/issues"
 	},
 	"type": "module",
 	"main": "index.js",
