@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Define the internationalization functionality
  *
@@ -24,7 +23,7 @@
  * @subpackage Disable_Widgets_Block/includes
  * @author     Yuky Hendiawan <yukyhendiawan1998@gmail.com>
  */
-class Disable_Widgets_Block_i18n {
+class Disable_Widgets_Block_I18n {
 
 
 	/**
@@ -39,9 +38,5 @@ class Disable_Widgets_Block_i18n {
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
-
 	}
-
-
-
 }

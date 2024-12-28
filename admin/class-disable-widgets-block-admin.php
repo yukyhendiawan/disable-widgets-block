@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -44,14 +43,13 @@ class Disable_Widgets_Block_Admin {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of this plugin.
-	 * @param      string    $version    The version of this plugin.
+	 * @param      string $plugin_name       The name of this plugin.
+	 * @param      string $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
-
+		$this->version     = $version;
 	}
 
 	/**
@@ -107,10 +105,10 @@ class Disable_Widgets_Block_Admin {
 			__( 'Disable Widgets', 'disable-widgets-block' ), // Menu title.
 			'manage_options', // Capability required.
 			'disable-widgets-block-settings', // Menu slug.
-			array( $this, 'template_for_information_menu' ), // Callback function.			
+			array( $this, 'template_for_information_menu' ), // Callback function.
 			'dashicons-admin-customizer' // Icon URL.
 		);
-	}	
+	}
 
 	/**
 	 * Loads the template for the 'Information' menu page in the plugin.
@@ -127,19 +125,18 @@ class Disable_Widgets_Block_Admin {
 			// Include the template file if it exists.
 			include $template_path;
 		}
-	}	
+	}
 
 	/**
 	 * Returns false.
-	 * 
+	 *
 	 * Useful for returning false to filters easily.
 	 *
 	 * @see __return_true()
-	 * 
+	 *
 	 * @return false False.
 	 */
 	public function disable_widgets_block() {
 		return false;
-	} 
-
+	}
 }

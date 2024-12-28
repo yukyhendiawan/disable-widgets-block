@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The plugin bootstrap file
  *
@@ -80,6 +79,5 @@ function disable_widgets_block() {
 
 	$plugin = new Disable_Widgets_Block();
 	$plugin->run();
-
 }
 disable_widgets_block();

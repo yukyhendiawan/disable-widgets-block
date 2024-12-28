@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The file that defines the core plugin class
  *
@@ -78,7 +77,6 @@ class Disable_Widgets_Block {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-
 	}
 
 	/**
@@ -87,7 +85,7 @@ class Disable_Widgets_Block {
 	 * Include the following files that make up the plugin:
 	 *
 	 * - Disable_Widgets_Block_Loader. Orchestrates the hooks of the plugin.
-	 * - Disable_Widgets_Block_i18n. Defines internationalization functionality.
+	 * - Disable_Widgets_Block_I18n. Defines internationalization functionality.
 	 * - Disable_Widgets_Block_Admin. Defines all hooks for the admin area.
 	 * - Disable_Widgets_Block_Public. Defines all hooks for the public side of the site.
 	 *
@@ -103,33 +101,32 @@ class Disable_Widgets_Block {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-disable-widgets-block-loader.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-disable-widgets-block-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-disable-widgets-block-i18n.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-disable-widgets-block-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-disable-widgets-block-admin.php';
+		require_once plugin_dir_path( __DIR__ ) . 'admin/class-disable-widgets-block-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-disable-widgets-block-public.php';
+		require_once plugin_dir_path( __DIR__ ) . 'public/class-disable-widgets-block-public.php';
 
 		$this->loader = new Disable_Widgets_Block_Loader();
-
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Disable_Widgets_Block_i18n class in order to set the domain and to register the hook
+	 * Uses the Disable_Widgets_Block_I18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -137,10 +134,9 @@ class Disable_Widgets_Block {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Disable_Widgets_Block_i18n();
+		$plugin_i18n = new Disable_Widgets_Block_I18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
 	}
 
 	/**
@@ -158,7 +154,6 @@ class Disable_Widgets_Block {
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'disable_admin_notices', 99999999 );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'admin_menu_page' );
 		$this->loader->add_filter( 'use_widgets_block_editor', $plugin_admin, 'disable_widgets_block', 99999999 );
-
 	}
 
 	/**
@@ -171,7 +166,6 @@ class Disable_Widgets_Block {
 	private function define_public_hooks() {
 
 		$plugin_public = new Disable_Widgets_Block_Public( $this->get_plugin_name(), $this->get_version() );
-
 	}
 
 	/**
@@ -213,5 +207,4 @@ class Disable_Widgets_Block {
 	public function get_version() {
 		return $this->version;
 	}
-
 }
