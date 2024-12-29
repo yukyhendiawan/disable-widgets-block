@@ -276,13 +276,13 @@ if ( file_exists( $plugin_file ) ) {
 
 								++$displayed;
 
-								if ( count( $data ) > $max_display ) {
+								if ( $displayed >= $max_display ) {
 									break;
 								}
 							}
 
 							// Check if there are more releases than displayed.
-							if ( count( $data ) > $max_display ) {
+							if ( $displayed >= $max_display ) {
 								?>
 								<a id="view-all-releases" target="_blank" href="https://github.com/yukyhendiawan/disable-widgets-block/releases">
 									<?php esc_html_e( 'View All Releases', 'disable-widgets-block' ); ?>
