@@ -1,5 +1,12 @@
 # Changelog
 
+## <small>1.4.1 (2024-12-29)</small>
+
+* refactor: reinstall packages ([cb9b41d](https://github.com/yukyhendiawan/disable-widgets-block/commit/cb9b41d))
+* refactor: update new packages ([10847fd](https://github.com/yukyhendiawan/disable-widgets-block/commit/10847fd))
+* fix: admin info changelog ([d5b975d](https://github.com/yukyhendiawan/disable-widgets-block/commit/d5b975d))
+* fix: looping changelogs ([1ce09e4](https://github.com/yukyhendiawan/disable-widgets-block/commit/1ce09e4))
+
 ## 1.4.0 (2024-12-28)
 
 * refactor: file index.php docblock comments ([9856ae2](https://github.com/yukyhendiawan/disable-widgets-block/commit/9856ae2))
