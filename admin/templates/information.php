@@ -75,7 +75,7 @@ if ( file_exists( $plugin_file ) ) {
 					<ul>
 						<li><a myid="general" href="#general"><?php esc_html_e( 'General ', 'disable-widgets-block' ); ?></a></li>
 						<li><a myid="report" href="#report" class="active"><?php esc_html_e( 'Report ', 'disable-widgets-block' ); ?></a></li>
-						<!-- <li><a myid="changelog" href="#changelog"><?php esc_html_e( 'Changelog ', 'disable-widgets-block' ); ?></a></li> -->
+						<li><a myid="changelog" href="#changelog"><?php esc_html_e( 'Changelog ', 'disable-widgets-block' ); ?></a></li>
 					</ul>
 				</div>
 			</div>
@@ -247,15 +247,8 @@ if ( file_exists( $plugin_file ) ) {
 								$formatted_date = $release_date->format( 'F j, Y' );
 
 								// Extract the body content.
-								$body = $release['body'];
-
-								$features_section      = disable_widgets_block_extract_section( $body, '### Features', 'feat' );
-								$bug_section           = disable_widgets_block_extract_section( $body, '### Bug Fixes', 'fix' );
-								$documentation_section = disable_widgets_block_extract_section( $body, '### Documentation', 'docs' );
-								$style_section         = disable_widgets_block_extract_section( $body, '### Styles', 'style' );
-								$refactoring_section   = disable_widgets_block_extract_section( $body, '### Code Refactoring', 'refactor' );
-								$performance_section   = disable_widgets_block_extract_section( $body, '### Performance Improvements', 'perf' );
-
+								$body           = $release['body'];
+								$changelog_list = disable_widgets_block_extract_changelog_from_body( $body );
 								?>
 								<section>
 									<h2>
@@ -267,41 +260,16 @@ if ( file_exists( $plugin_file ) ) {
 										</span>
 									</h2>
 									<div class="release">
-										<?php if ( ! empty( $features_section ) ) : ?>
-											<ul>
-												<?php echo wp_kses_post( str_replace( array( '(', ')' ), '', $features_section ) ); ?>
-											</ul>
-										<?php endif; ?>
-
-										<?php if ( ! empty( $bug_section ) ) : ?>
-											<ul>
-												<?php echo wp_kses_post( str_replace( array( '(', ')' ), '', $bug_section ) ); ?>
-											</ul>
-										<?php endif; ?>		
-								
-										<?php if ( ! empty( $documentation_section ) ) : ?>
-											<ul>
-												<?php echo wp_kses_post( str_replace( array( '(', ')' ), '', $documentation_section ) ); ?>
-											</ul>
-										<?php endif; ?>										
-
-										<?php if ( ! empty( $style_section ) ) : ?>
-											<ul>
-												<?php echo wp_kses_post( str_replace( array( '(', ')' ), '', $style_section ) ); ?>
-											</ul>
-										<?php endif; ?>
-
-										<?php if ( ! empty( $refactoring_section ) ) : ?>
-											<ul>
-												<?php echo wp_kses_post( str_replace( array( '(', ')' ), '', $refactoring_section ) ); ?>
-											</ul>
-										<?php endif; ?>
-
-										<?php if ( ! empty( $performance_section ) ) : ?>
-											<ul>
-												<?php echo wp_kses_post( str_replace( array( '(', ')' ), '', $performance_section ) ); ?>
-											</ul>
-										<?php endif; ?>
+										<ul>
+											<?php foreach ( $changelog_list as $log_item ) : ?>
+												<?php if ( 'other' !== $log_item['commit_info'] ) : ?>
+													<li>
+														<span class="<?php echo esc_attr( $log_item['commit_info'] ); ?>"></span>
+														<?php echo wp_kses_post( $log_item['description'] ); ?>
+													</li>
+												<?php endif; ?>
+											<?php endforeach; ?>
+										</ul>
 									</div>
 								</section>
 								<?php
@@ -325,35 +293,37 @@ if ( file_exists( $plugin_file ) ) {
 					}
 
 					/**
-					 * Extracts a section from the release body and formats it into an HTML list.
+					 * Extracts changelog data from a given body of text.
 					 *
-					 * @param string $body The body of the release note.
-					 * @param string $start_marker The start marker for the section.
-					 * @param string $info The class name for the span element.
-					 * @return string The extracted and formatted section as an HTML list.
+					 * This function processes the input body of text, which is expected to follow a specific format,
+					 * and extracts information about commits, including descriptions, commit hashes, commit URLs,
+					 * and commit types (such as 'feat', 'fix', 'docs', etc.).
+					 *
+					 * @param string $body The body of text containing changelog entries with commit details.
+					 * @return array An array of changelog entries, each containing the description, commit hash,
+					 *               commit URL, and commit type.
 					 */
-					function disable_widgets_block_extract_section( $body, $start_marker, $info ) {
-						// Define the start and end markers for the section.
-						$start_pos = strpos( $body, $start_marker );
-						if ( false === $start_pos ) {
-							return ''; // Section not found.
-						}
-						$start_pos += strlen( $start_marker );
-						$end_pos    = strpos( $body, '###', $start_pos );
-						if ( false === $end_pos ) {
-							$end_pos = strlen( $body ); // To the end of the body if no end marker is found.
-						}
-						$section_text = substr( $body, $start_pos, $end_pos - $start_pos );
+					function disable_widgets_block_extract_changelog_from_body( $body ) {
 
-						// Remove commit URLs and convert to HTML list items.
-						$section_text = preg_replace( '/\([^\)]+\)/', '', $section_text );
-						$section_text = preg_replace( '/\*\*[^*]+\*\*/', '', $section_text );
-						$section_text = trim( $section_text );
-						$section_text = preg_replace( '/^\s*\*\s*/m', '<li><span class="' . esc_attr( $info ) . '"></span>', $section_text );
-						$section_text = preg_replace( '/\s*$/m', '</li>', $section_text );
-						$section_text = str_replace( "\n\n", '</li><li><span class="' . esc_attr( $info ) . '"></span>', $section_text );
+						// Regular expression to match each line starting with '*'.
+						preg_match_all( '/\* (.+?) \(\[([a-f0-9]+)\]\(https:\/\/github\.com\/.*\/commit\/([a-f0-9]+)\)\)/', $body, $matches );
 
-						return $section_text;
+						// Convert matches to an array.
+						$changelog = array();
+						foreach ( $matches[1] as $index => $description ) {
+							// Extract commit type (e.g., refactor, feat, fix).
+							preg_match( '/^(refactor|feat|fix|chore|docs|style|perf|test):/', $description, $commit_type_matches );
+							$commit_info = ! empty( $commit_type_matches ) ? $commit_type_matches[1] : 'other';  // Default to 'other' if not found.
+
+							$changelog[] = array(
+								'description' => $description,
+								'commit_hash' => $matches[2][ $index ],
+								'commit_url'  => 'https://github.com/yukyhendiawan/disable-widgets-block/commit/' . $matches[3][ $index ],
+								'commit_info' => $commit_info,
+							);
+						}
+
+						return $changelog;
 					}
 					?>
 					</div>
