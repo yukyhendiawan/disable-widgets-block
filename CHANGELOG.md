@@ -1,5 +1,10 @@
 # Changelog
 
+## <small>1.4.2 (2025-02-22)</small>
+
+* chore(deps): update npm packages to latest versions ([7f6d19e](https://github.com/yukyhendiawan/disable-widgets-block/commit/7f6d19e))
+* fix: linter css ([65bce7b](https://github.com/yukyhendiawan/disable-widgets-block/commit/65bce7b))
+
 ## <small>1.4.1 (2024-12-29)</small>
 
 * refactor: reinstall packages ([cb9b41d](https://github.com/yukyhendiawan/disable-widgets-block/commit/cb9b41d))
