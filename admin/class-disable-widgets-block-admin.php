@@ -91,7 +91,7 @@ class Disable_Widgets_Block_Admin {
 	}
 
 	/**
-	 * Registers the top-level admin menu page and adds a submenu page for 'About'.
+	 * Registers the top-level admin menu page and adds a submenu page.
 	 *
 	 * This function uses the WordPress add_menu_page() and add_submenu_page() functions to create
 	 * the necessary admin menu structure. It also sets up the callback functions for

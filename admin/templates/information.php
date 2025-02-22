@@ -109,7 +109,6 @@ if ( file_exists( $plugin_file ) ) {
 		</div>
 	</section>
 
-
 	<!-- Report -->
 	<section class="report data-content">
 		<div class="mycontainer">
