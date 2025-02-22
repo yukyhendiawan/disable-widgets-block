@@ -1,4 +1,5 @@
 === Disable Widgets Block ===
+Contributors: yukyhendiawan
 Tags:              disable, widgets, gutenberg, classic, enable
 Requires at least: 6.0
 Tested up to:      6.7
