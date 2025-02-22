@@ -73,7 +73,7 @@ class Disable_Widgets_Block_Admin {
 	 * Clear admin notices on specific plugin pages.
 	 *
 	 * This function removes all admin notices when the user is on either
-	 * the "disable-widgets-blockock-settings" or "disable-widgets-block" page within the admin area.
+	 * the "disable-widgets-block-settings" or "disable-widgets-block" page within the admin area.
 	 *
 	 * @global string $plugin_page The current plugin page slug.
 	 */
