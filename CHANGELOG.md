@@ -1,5 +1,10 @@
 # Changelog
 
+## <small>1.4.3 (2025-02-24)</small>
+
+* refactor: docblock comment disable admin notices ([e5403b9](https://github.com/yukyhendiawan/disable-widgets-block/commit/e5403b9))
+* refactor: update README information ([b95e25c](https://github.com/yukyhendiawan/disable-widgets-block/commit/b95e25c))
+
 ## <small>1.4.2 (2025-02-22)</small>
 
 * chore(deps): update npm packages to latest versions ([7f6d19e](https://github.com/yukyhendiawan/disable-widgets-block/commit/7f6d19e))
