@@ -104,7 +104,7 @@ class Disable_Widgets_Block_Admin {
 			__( 'Disable Widgets', 'disable-widgets-block' ), // Page title.
 			__( 'Disable Widgets', 'disable-widgets-block' ), // Menu title.
 			'manage_options', // Capability required.
-			'disable-widgets-block-settings', // Menu slug.
+			'disable-widgets-block-information', // Menu slug.
 			array( $this, 'template_for_information_menu' ), // Callback function.
 			'dashicons-admin-customizer' // Icon URL.
 		);
