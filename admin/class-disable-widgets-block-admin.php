@@ -53,14 +53,14 @@ class Disable_Widgets_Block_Admin {
 	}
 
 	/**
-	 * Enqueue admin-specific styles and scripts for the 'disable-widgets-block-settings' admin page.
+	 * Enqueue admin-specific styles and scripts for the 'disable-widgets-block-information' admin page.
 	 *
 	 * @param string $hook The current admin page hook.
 	 */
 	public function enqueue_admin( $hook ) {
 
-		// Check if the current admin page is 'disable-widgets-block-settings' (top-level menu page).
-		if ( 'toplevel_page_disable-widgets-block-settings' === $hook ) {
+		// Check if the current admin page is 'disable-widgets-block-information' (top-level menu page).
+		if ( 'toplevel_page_disable-widgets-block-information' === $hook ) {
 			// Enqueue the admin CSS file.
 			wp_enqueue_style( 'disable-widgets-block-style', DISABLE_WIDGETS_BLOCK_DIR_URL . '/assets/css/admin-menu.min.css', array(), '1.0.0' );
 
@@ -73,7 +73,7 @@ class Disable_Widgets_Block_Admin {
 	 * Clear admin notices on specific plugin pages.
 	 *
 	 * This function removes all admin notices when the user is on either
-	 * the "disable-widgets-block-settings" or "disable-widgets-block" page within the admin area.
+	 * the "disable-widgets-block-information" or "disable-widgets-block" page within the admin area.
 	 *
 	 * @global string $plugin_page The current plugin page slug.
 	 */
@@ -82,8 +82,8 @@ class Disable_Widgets_Block_Admin {
 
 		// Check if the user is in the admin area.
 		if ( is_admin() ) {
-			// If the current page is either "disable-widgets-block-settings" or "disable-widgets-block".
-			if ( 'disable-widgets-block-settings' === $plugin_page ) {
+			// If the current page is either "disable-widgets-block-information" or "disable-widgets-block".
+			if ( 'disable-widgets-block-information' === $plugin_page ) {
 				// Remove all admin notices for these specific pages.
 				remove_all_actions( 'admin_notices' );
 			}
